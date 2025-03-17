@@ -1,0 +1,214 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    padding-top: 50px;
+    transition: background-color 0.3s ease;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect on Container */
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Left Column (Form) */
+.left-column {
+    width: 40%; /* Reduced width for the form */
+    padding: 20px;
+    background-color: #e6f7ff; /* Light Blue - Diabetes Awareness */
+    border-radius: 10px;
+    margin-right: 20px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.left-column:hover {
+    background-color: #ccefff; /* Darker Blue */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-column h1 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.left-column p.subtitle {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Form Input Fields */
+.form-group {
+    margin-bottom: 15px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+input::placeholder {
+    color: #aaa;
+    text-align: center;
+    font-style: italic;
+}
+
+input:focus {
+    border-color: #4CAF50; /* Green color for focus */
+    outline: none;
+    transform: translateY(-2px);
+}
+
+input:hover {
+    border-color: #45a049; /* Darker green on hover */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50; /* Green for positive actions */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green */
+    transform: translateY(-2px);
+}
+
+#predictionResult {
+    margin-top: 20px;
+    transition: opacity 0.3s ease;
+}
+
+/* Right Column (Information) */
+.right-column {
+    width: 60%; /* Increased width for the details */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.right-column h2 {
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.right-column h2:hover {
+    color: #4CAF50; /* Green for positive actions */
+}
+
+.right-column ul {
+    list-style-type: none;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #555;
+}
+
+.right-column li {
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.right-column li:hover {
+    color: #4CAF50;
+}
+
+.right-column strong {
+    color: #333;
+}
+
+.right-column span {
+    font-style: italic;
+    color: #888;
+    margin-left: 10px;
+}
+
+/* Red (Critical Areas) */
+.diabetic {
+    color: #e74c3c; /* Red for diabetic conditions */
+}
+
+.diabetic:hover {
+    color: #c0392b; /* Darker red for hover */
+}
+
+/* Green (Healthy Areas) */
+.non-diabetic {
+    color: #2ecc71; /* Green for non-diabetic conditions */
+}
+
+.non-diabetic:hover {
+    color: #27ae60; /* Darker green for hover */
+}
+
+/* Add Smooth Scroll to the Body */
+body {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .left-column {
+        margin-bottom: 20px;
+    }
+}
+
+/* Hover effect for links (if added) */
+a {
+    color: #4CAF50; /* Green links for positivity */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #45a049;
+}

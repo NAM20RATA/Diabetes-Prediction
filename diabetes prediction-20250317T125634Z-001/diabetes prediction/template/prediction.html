@@ -1,0 +1,74 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="prediction.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column: Form -->
+        <div class="left-column">
+            <h1>Diabetes Prediction</h1>
+            <p class="subtitle">Enter your health details to predict the likelihood of diabetes.</p>
+            
+            <form id="predictionForm" method="POST" action="/predict">
+                <div class="form-group">
+                    <input type="number" id="pregnancies" name="pregnancies" placeholder="Pregnancies" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="glucose" name="glucose" placeholder="Glucose (mg/dL)" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="bloodPressure" name="bloodPressure" placeholder="Blood Pressure (mm Hg)" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="skinThickness" name="skinThickness" placeholder="Skin Thickness (mm)" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="insulin" name="insulin" placeholder="Insulin (µU/mL)" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="bmi" name="bmi" step="0.1" placeholder="BMI (kg/m²)" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="pedigree" name="pedigree" step="0.01" placeholder="Diabetes Pedigree" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="number" id="age" name="age" placeholder="Age (Years)" required>
+                </div>
+
+                <button type="submit">Predict</button>
+            </form>
+
+            <div id="predictionResult">
+                <h2>Prediction: <span id="predictionText">None</span></h2>
+            </div>
+        </div>
+
+        <!-- Right Column: Detailed Descriptions -->
+        <div class="right-column">
+            <h2>Health Measure Details</h2>
+            <ul>
+                <li><strong>Pregnancies:</strong> The number of times a woman has been pregnant. This factor is considered because higher pregnancies can indicate increased risk of diabetes. <span>(Unit: Count)</span></li>
+                <li><strong>Glucose:</strong> Plasma glucose concentration at 2 hours during an oral glucose tolerance test (OGTT). Higher glucose levels are associated with a higher likelihood of diabetes. <span>(Unit: mg/dL)</span></li>
+                <li><strong>Blood Pressure:</strong> The diastolic blood pressure value (measured in mm Hg). High blood pressure can often correlate with diabetes. <span>(Unit: mm Hg)</span></li>
+                <li><strong>Skin Thickness:</strong> Skinfold thickness in millimeters. This measure is an indicator of body fat and is correlated with insulin resistance. <span>(Unit: mm)</span></li>
+                <li><strong>Insulin:</strong> Insulin levels in the blood after a 2-hour test. Low or high insulin levels could indicate the presence of diabetes. <span>(Unit: µU/mL)</span></li>
+                <li><strong>BMI:</strong> Body mass index (weight in kg / height in m²). A BMI higher than 23 is generally considered a risk factor for diabetes. <span>(Unit: kg/m²)</span></li>
+                <li><strong>Diabetes Pedigree Function:</strong> A function that scores the likelihood of diabetes based on family history and other genetic factors. <span>(Unit: None, score between 0-1)</span></li>
+                <li><strong>Age:</strong> Age in years. The risk of diabetes increases with age, especially after 45 years. <span>(Unit: Years)</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

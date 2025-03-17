@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://meet.jit.si/external_api.js'></script>
+    <title>Diabetes Consultation Video Call</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #2f8be0;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            max-width: 50%;
+            text-align: left;
+        }
+        .info p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+        }
+        .info img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .button {
+            background-color: #2f8be0;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            margin: 20px 0;
+        }
+        .button:hover {
+            background-color: #1c6ab9;
+            transform: scale(1.05);
+        }
+        .video {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .loader {
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Diabetes Consultation Video Call</h1>
+    </div>
+    <div class="container">
+        <div class="info">
+            <p>Welcome to your virtual diabetes consultation. Click the button below to start the meeting with your doctor.</p>
+            <p>Make sure you have a stable internet connection and your device's camera and microphone are working.</p>
+            <img src="consult.jpeg" alt="Doctor Image">
+            <p>Your doctor is waiting for you. Let's get started!</p>
+        </div>
+        <div class="button-container">
+            <button id="start" class="button">Start Consultation</button>
+            <div id="loader" class="loader"></div>
+        </div>
+    </div>
+    <div id="jitsi-container" class="video"></div>
+
+    <script>
+        var button = document.querySelector('#start');
+        var container = document.querySelector('#jitsi-container');
+        var loader = document.querySelector('#loader');
+        var api = null;
+
+        button.addEventListener('click', () => {
+            // Show the loader and change button text
+            loader.style.display = 'block';
+            button.textContent = 'Starting...';
+            button.disabled = true;
+
+            var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var stringLength = 30;
+
+            function pickRandom() {
+                return possible[Math.floor(Math.random() * possible.length)];
+            }
+
+            var randomString = Array.apply(null, Array(stringLength)).map(pickRandom).join('');
+
+            var domain = "meet.jit.si";
+            var options = {
+                "roomName": randomString,
+                "parentNode": container,
+                "width": 600,
+                "height": 600,
+            };
+
+            api = new JitsiMeetExternalAPI(domain, options);
+
+            api.addEventListener('videoConferenceJoined', () => {
+                // Hide the loader and update button text once the meeting starts
+                loader.style.display = 'none';
+                button.textContent = 'Meeting Started';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    z-index: 100;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+
+/* General Section Style */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    color: #444;
+}
+
+.section h1, .section h2, .section h3, .section h4 {
+    color: #4CAF50;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Intro Section */
+.intro {
+    background-color: #e8f5e9;
+}
+
+.intro p {
+    font-size: 18px;
+}
+
+/* How to Maintain Health Section */
+.maintain {
+    background-color: #d7ffd9;
+}
+
+.maintain ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.maintain li {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #444;
+}
+
+.maintain li strong {
+    color: #4CAF50;
+}
+
+/* Healthy Lifestyle Section */
+.lifestyle {
+    background-color: #f1f8e9;
+}
+
+.lifestyle ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lifestyle li {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #444;
+}
+
+.lifestyle li strong {
+    color: #4CAF50;
+}
+
+/* Stay Informed Section */
+.support {
+    background-color: #d0f0c0;
+}
+
+.support ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.support li {
+    font-size: 18px;
+    margin: 15px 0;
+    color: #444;
+}
+
+.support li strong {
+    color: #4CAF50;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .section {
+        padding: 60px 10px;
+    }
+
+    .content {
+        padding: 0 15px;
+    }
+}
